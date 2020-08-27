@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Caveat" />
+
+    <title>Vue JS Documentation</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+
+        header {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            font-size: 2em;
+            color: deeppink;
+        }
+
+        p, li, code {
+            text-align: justify;
+            font-family: Arial;
+            font-size: 18px;
+        }
+
+        #navbar {
+            width: 25%;
+            background-color: azure;
+            margin-top: 10%;
+        }
+
+        .nav-link {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1em;
+            color: black;
+        }
+
+        @media screen and (max-width: 992px) {
+            #navbar {
+                width: auto;
+                position: static;
+                text-align: center;
+                margin-top: 2%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <nav class="navbar-dark fixed-top flex-column" id="navbar">
+                    <header class="border-info">Vue JS Documentation</header>
+
+
+
+
+                    <div class="container">
+                        <a class="nav-link" href="#introduction">Introduction</a>
+                        <a class="nav-link" href="#Installation">Installation</a>
+
+                        <a class="nav-link" href="#Initializing">Initializing</a>
+                        <a class="nav-link" href="#Project_Structure">Project Structure</a>
+
+                        <a class="nav-link" href="#Todo">Todo</a>
+                        <a class="nav-link" href="#References">References</a>
+
+
+
+                    </div>
+                </nav>
+            </div>
+            <div class="col-lg-9" id="row">
+                <main id="main-doc">
+                    <section id="introduction" class="main-section">
+                        <header> Introduction </header>
+                        <p>  Vue is a modern JavaScript framework that provides useful facilities for progressive enhancement — unlike many other frameworks, you can use Vue to enhance existing HTML. This lets you use Vue as a drop-in replacement for a library like JQuery.</p>
+
+                        <p> That being said, you can also use Vue to write entire Single Page Applications (SPAs). This allows you to create markup managed entirely by Vue, which can improve developer experience and performance when dealing with complex applications. It also allows you to take advantage of libraries for client-side routing and state management when you need to. Additionally, Vue takes a "middle ground" approach to tooling like client-side routing and state management. While the Vue core team maintains suggested libraries for these functions, they are not directly bundled into Vue. This allows you to select a different routing/state management library if they better fit your application.</p>
+
+                        <p>In addition to allowing you to progressively integrate Vue into your applications, Vue also provides a progressive approach to writing markup. </p>
+                        <p>  Like most frameworks, Vue lets you create reusable blocks of markup via components. Most of the time, Vue components are written using a special HTML template syntax. When you need more control than the HTML syntax allows, you can write JSX or plain JavaScript functions to define your  components.</p>
+                    </section>
+                    <section id="Installation" class="main-section">
+                        <header>Installation</header>
+
+                        <p>
+                            To use Vue in an existing site, you can drop one of the following
+                            <code><a href="#">&lt;script&gt;</a></code>
+                            elements onto a page.This allows you to start using Vue on existing sites, which is why Vue prides itself on being a progressive framework.This is a great option when migrating an existing project using a library like JQuery to Vue.With this method, you can use a lot of the core features of Vue, such as the attributes, custom components, and data - management.
+
+                        </p>
+                        <ul>
+                            <li>
+                                Development Script (Unoptimized, but includes console warnings. Great for development
+                                <br />
+                                <div class="card">
+                                    <div class="card-body">
+                                        <code>
+                                            &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+                                        </code>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                Production Script (Optimized version, minimal console warnings. It is recommended that you specify a version number when including Vue on your site so that any framework updates do not break your live site without you knowing.)
+                                <br />
+                                <div class="card">
+                                    <div class="card-body">
+                                        <code>
+                                            &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2&quot;&gt;&lt;/script&gt;
+                                        </code>
+                                    </div>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </section>
+                    <section id="Initializing" class="main-section">
+                        <header>Initializing</header>
+                        <p>To explore various features of Vue, we will be building up a sample todo list app. We'll begin by using the Vue CLI to create a new app framework to build our app into. Follow the steps below:</p>
+
+                        <ol>
+                            <li>
+                                In terminal, cd to where you'd like to create your sample app, then run vue create moz-todo-vue.
+                            </li>
+                            <li>
+                                Use the arrow keys and <kbd>Enter </kbd>to select the "Manually select features" option.
+                            </li>
+                            <li>
+                                The first menu you’ll be presented with allows you to choose which features you want to include in your project. Make sure that "Babel" and "Linter / Formatter" are selected. If they are not, use the arrow keys and the space bar to toggle them on. Once they are selected, press <kbd>Enter</kbd> to proceed.
+                            </li>
+                            <li>
+                                Next you’ll select a config for the linter / formatter. Navigate to "Eslint with error prevention only" and hit <kbd>Enter</kbd> again. This will help us catch common errors, but not be overly opinionated.
+                            </li>
+
+                            <li>
+                                Next you are asked to configure what kind of automated linting we want. Select "Lint on save". This will check for errors when we save a file inside the project. Hit <kbd>Enter</kbd> to continue.
+                            </li>
+                            <li>
+                                Now, you will select how we want your config files to be managed. "In dedicated config files" will put your config settings for things like ESLint into their own, dedicated files. The other option, "In package.json", will put all of your config settings into the app's package.json file. Select "In dedicated config files" and push <kbd>Enter</kbd>.
+                            </li>
+                            <li>
+                                Finally, you are asked if you want to save this as a preset for future options. This is entirely up to you. If you like these settings over the existing presets and want to use them again, type <kbd>y</kbd> , otherwise type <kbd>n</kbd>.
+                            </li>
+                        </ol>
+
+
+                    </section>
+                    <section id="Project_Structure" class="main-section">
+                        <header>Project Structure</header>
+                        <p>If everything went successfully, the CLI should have created a series of files and directories for your project. The most significant ones are as follows:</p>
+                        <ul>
+                            <li><code>.eslintrc.js</code>: This is a config file for&nbsp;<a class="external" href="https://eslint.org/" rel="noopener">eslint</a>. You can use this to manage your linting rules.</li>
+                            <li><code>babel.config.js</code>: This is the config file for&nbsp;<a class="external" href="https://babeljs.io/" rel="noopener">Babel</a>, which transforms modern JavaScript features being used in development code into older syntax that is more cross-browser compatible in production code. You can register additional babel plugins in this file.</li>
+                            <li><code>.browserslistrc</code>: This is a config for&nbsp;<a class="external" href="https://github.com/browserslist/browserslist" rel="noopener">Browserslist</a>. You can use this to control which browsers your tooling optimizes for.</li>
+                            <li><code>public</code>: This directory contains static assets that are published, but not processed by&nbsp;<a class="external" href="https://webpack.js.org/" rel="noopener">Webpack</a>&nbsp;during build (with one exception;&nbsp;<code>index.html</code>&nbsp;gets some processing).</li>
+                        </ul>
+                    </section>
+                    <section id="Todo" class="main-section">
+                        <header>Todo</header>
+                        <p>Let's create our first component, which will display a single todo item. We'll use this to build our list of todos.</p>
+                        <ol>
+                            <li>In your&nbsp;<code>moz-todo-vue/src/components</code>&nbsp;directory, create a new file named&nbsp;<code>ToDoItem.vue</code>. Open the file in your code editor.</li>
+                            <li>Create the component's template section by adding&nbsp;<code>&lt;template&gt;&lt;/template&gt;</code>&nbsp;to the top of the file.</li>
+                            <li>Create a&nbsp;<code>&lt;script&gt;&lt;/script&gt;</code>&nbsp;section below your template section. Inside the&nbsp;<code>&lt;script&gt;</code>&nbsp;tags, add a default exported object&nbsp;<code>export default {}</code>, which is your component object.</li>
+                        </ol>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <p>
+                                    <code>
+                                        &lt;template&gt;&lt;/template&gt;
+                                        <br />&lt;script&gt;
+                                        export default {};&nbsp;<br />
+                                        &lt;/script&gt;
+                                    </code>
+                                </p>
+                            </div>
+                        </div>
+                        <ol>
+                            <li>
+                                Add an empty &lt;div&gt;
+                                <br />
+                                inside your component template now.
+                            </li>
+                            <li>
+                                Inside that  &lt;div&gt;, let's add a checkbox and a corresponding label. Add an id to the checkbox, and a for attribute mapping the checkbox to the label, as shown below.
+                            </li>
+                        </ol>
+                        <div class="card">
+                            <div class="card-body">
+                                <p>
+                                    <code>
+                                        &lt;template&gt;
+                                        <br />&lt;div&gt;
+                                        <br />&lt;input type=&quot;checkbox&quot; id=&quot;todo-item&quot; checked=&quot;false&quot; /&gt;
+                                        <br />&lt;label for="todo-item"&gt;My Todo Item&lt;/label&gt;
+                                        <br />&lt;/div&gt;
+                                        <br />
+                                        &lt;/template&gt;
+
+
+                                    </code>
+                                </p>
+
+                            </div>
+                        </div>
+                    </section>
+                    <section id="References" class="main-section">
+                        <header>References</header>
+
+                        <ul>
+                            <li>
+                                All the documentation in this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Vue_getting_started">MDN</a>
+                            </li>
+                        </ul>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src=" https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>
